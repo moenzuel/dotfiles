@@ -31,3 +31,8 @@ EOF
 asdf plugin-add direnv
 asdf direnv setup --shell bash --version latest
 
+# 1Password-CLI
+asdf plugin add 1password-cli
+asdf install 1password-cli latest
+asdf global 1password-cli latest
+
