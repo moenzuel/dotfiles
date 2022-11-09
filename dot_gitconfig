@@ -1,0 +1,6 @@
+[user]
+	name = Bryan Clark
+	email = me@moenzuel.com
+
+[alias]
+	root = rev-parse --show-toplevel
