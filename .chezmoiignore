@@ -3,3 +3,11 @@ LICENSE
 install.sh
 .devcontainer
 .github
+
+{{ if ne .chezmoi.os "darwin" }}
+.bashrc
+{{ end }}
+{{ if ne .chezmoi.os "linux" }}
+.zshrc
+.zshenv
+{{ end }}

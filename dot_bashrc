@@ -1,0 +1,13 @@
+# ASDF
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+
+# Starship
+eval "$(starship init bash)"
+
+# Hook direnv into your shell.
+#eval "$(asdf exec direnv hook bash)"
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/bashrc"
+
+# A shortcut for asdf managed direnv.
+direnv() { asdf exec direnv "$@"; }

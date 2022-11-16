@@ -1,9 +1,7 @@
 # ASDF
 . $HOME/.asdf/asdf.sh
-# append completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
-# initialise completions with ZSH's compinit
-autoload -Uz compinit && compinit
+fpath=(${ASDF_DIR}/completions $fpath) # append completions to fpath
+autoload -Uz compinit && compinit # initialise completions with ZSH's compinit
 
 # Starship
 eval "$(asdf exec starship init zsh)"
