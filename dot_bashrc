@@ -1,3 +1,5 @@
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
 # ASDF
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
