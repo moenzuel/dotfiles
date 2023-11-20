@@ -1,6 +1,7 @@
 [user]
 	name = Bryan Clark
 	email = me@moenzuel.com
+	signingkey = 73193B56CD8E604C
 
 [alias]
 	root = rev-parse --show-toplevel

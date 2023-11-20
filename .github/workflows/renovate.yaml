@@ -1,0 +1,57 @@
+---
+name: "Renovate"
+
+on:
+  workflow_dispatch:
+    inputs:
+      dryRun:
+        description: Dry-Run
+        default: "false"
+        required: false
+      logLevel:
+        description: Log-Level
+        default: debug
+        required: false
+  schedule:
+    - cron: "0 * * * *"
+  push:
+    branches: ["main"]
+    paths:
+      - .github/renovate-bot.json5
+      - .github/renovate.json5
+      - .github/renovate/**.json5
+
+env:
+  LOG_LEVEL: debug
+  RENOVATE_DRY_RUN: false
+  RENOVATE_CONFIG_FILE: .github/renovate-bot.json5
+  RENOVATE_AUTODISCOVER: true
+  RENOVATE_AUTODISCOVER_FILTER: "${{ github.repository }}"
+
+jobs:
+  renovate:
+    name: Renovate
+    runs-on: ["arc-runner-set-dotfiles"]
+    steps:
+      - uses: actions/create-github-app-token@e995b4e40ace2eb5bf13137d9abe242c98f3aab6 # v1.6.0
+        id: app-token
+        with:
+          app-id: ${{ secrets.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_APP_PRIVATE_KEY }}
+
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          token: "${{ steps.app-token.outputs.token }}"
+
+      - name: Override default config from dispatch variables
+        shell: bash
+        run: |
+          echo "RENOVATE_DRY_RUN=${{ github.event.inputs.dryRun || env.RENOVATE_DRY_RUN }}" >> "${GITHUB_ENV}"
+          echo "LOG_LEVEL=${{ github.event.inputs.logLevel || env.LOG_LEVEL }}" >> "${GITHUB_ENV}"
+
+      - name: Renovate
+        uses: renovatebot/github-action@9c2e6e7dc5340821aa2c82094e7326895c94a435 # v39.1.3
+        with:
+          configurationFile: "${{ env.RENOVATE_CONFIG_FILE }}"
+          token: "${{ steps.app-token.outputs.token }}"

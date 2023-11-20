@@ -5,11 +5,11 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 . $HOME/.asdf/completions/asdf.bash
 
 # Starship
-eval "$(starship init bash)"
+eval "$(asdf exec starship init bash)"
 
 # Hook direnv into your shell.
-#eval "$(asdf exec direnv hook bash)"
-source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/bashrc"
+eval "$(asdf exec direnv hook bash)"
 
 # A shortcut for asdf managed direnv.
 direnv() { asdf exec direnv "$@"; }
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/bashrc"

@@ -1,13 +1,15 @@
 README.md
 LICENSE
-install.sh
+bootstrap.sh
 .devcontainer
 .github
+.vscode
 
-{{ if ne .chezmoi.os "darwin" }}
+{{ if eq .chezmoi.os "darwin" }}
 .bashrc
 {{ end }}
-{{ if ne .chezmoi.os "linux" }}
+
+{{ if eq .chezmoi.os "linux" }}
 .zshrc
 .zshenv
 {{ end }}

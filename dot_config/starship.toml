@@ -9,4 +9,7 @@ disabled = true
 
 [aws]
 disabled = true
+add_newline = false
 
+[kubernetes]
+disabled = true
