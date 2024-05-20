@@ -1,3 +1,5 @@
 if status is-interactive
-    source {{ .chezmoi.homeDir }}/.asdf/asdf.fish
+    if test -d {{ .chezmoi.homeDir }}/.asdf/
+        source {{ .chezmoi.homeDir }}/.asdf/asdf.fish
+    end
 end
