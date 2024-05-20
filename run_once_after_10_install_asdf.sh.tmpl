@@ -12,10 +12,10 @@ install_asdf_plugins() {
   # . "{{ .chezmoi.homeDir }}/.asdf/asdf.sh"
   
   # Install direnv
-  {{ .chezmoi.homeDir }}/.asdf/bin/asdf plugin add direnv
-  {{ .chezmoi.homeDir }}/.asdf/bin/asdf install direnv latest
-  {{ .chezmoi.homeDir }}/.asdf/bin/asdf global direnv latest
-  {{ .chezmoi.homeDir }}/.asdf/bin/asdf direnv setup --shell fish --version latest
+  # {{ .chezmoi.homeDir }}/.asdf/bin/asdf plugin add direnv
+  # {{ .chezmoi.homeDir }}/.asdf/bin/asdf install direnv latest
+  # {{ .chezmoi.homeDir }}/.asdf/bin/asdf global direnv latest
+  # {{ .chezmoi.homeDir }}/.asdf/bin/asdf direnv setup --shell fish --version latest
 
   # Install starship
   {{ .chezmoi.homeDir }}/.asdf/bin/asdf plugin add starship
