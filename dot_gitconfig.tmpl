@@ -5,13 +5,6 @@
 [alias]
 	root = rev-parse --show-toplevel
 
-{{ if eq .chezmoi.os "linux" }}
-{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
-[core]
-    sshCommand = ssh.exe
-{{   end }}
-{{ end }}
-
 [gpg]
 	format = ssh
 
