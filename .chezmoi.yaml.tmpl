@@ -1,0 +1,8 @@
+{{- /* Checks if running interactively, which is not the case for GitHub Codespaces */ -}}
+{{- $interactive := stdinIsATTY -}}
+
+sourceDir: "{{ .chezmoi.sourceDir }}"
+
+data:
+  name: "Bryan Clark"
+  email: "me@moenzuel.com"
