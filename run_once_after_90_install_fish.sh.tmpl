@@ -31,12 +31,12 @@ install_fish() {
 
 # Function to set fish as the default shell
 set_fish_default() {
-    if [[ "$SHELL" == *"fish"* ]]; then
-        echo "Fish shell is already the default shell"
-    else
-        echo "Setting Fish shell as the default shell..."
-        chsh -s $(which fish)
-    fi
+    # if [[ "$SHELL" == *"fish"* ]]; then
+    #     echo "Fish shell is already the default shell"
+    # else
+    #     echo "Setting Fish shell as the default shell..."
+    #     chsh -s $(which fish)
+    # fi
 }
 
 install_fish
