@@ -4,12 +4,3 @@ bootstrap.sh
 .devcontainer
 .github
 .vscode
-
-{{ if eq .chezmoi.os "darwin" }}
-.bashrc
-{{ end }}
-
-{{ if eq .chezmoi.os "linux" }}
-.zshrc
-.zshenv
-{{ end }}

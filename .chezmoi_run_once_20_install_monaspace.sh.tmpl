@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# Download monaspace
+if [ ! -d "$HOME/.asdf" ]; then
+    git clone https://github.com/githubnext/monaspace.git "$HOME/.monaspace"
+fi
+
+{{ if eq .chezmoi.os "linux" }}
+
+cd "$HOME/.monaspace"
+bash util/install_linux.sh
+
+{{ else if eq .chezmoi.os "darwin" }}
+
+cd "$HOME/.monaspace"
+bash util/install_macos.sh
+
+{{ end }}
+
+# Clean up
+rm -rf "$HOME/.monaspace"
+
+echo "monaspace installation and setup complete."

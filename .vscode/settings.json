@@ -1,5 +1,9 @@
 {
-    "editor.fontFamily": "'Monaspace Neon', monospace"
-    // "editor.fontSize": 14
+    "editor.fontFamily": "'Monaspace Neon', monospace",
+    "editor.fontSize": 14,
+    "files.associations": {
+        "*.fish.tmpl": "shellscript",
+        "*.sh.tmpl": "shellscript"
+    },
 }
   
