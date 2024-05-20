@@ -1,5 +1,6 @@
 {{ if eq .chezmoi.os "linux" }}
 {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+{{     if not (env "REMOTE_CONTAINERS_IPC") }}
 # SSH 1Password Pipe
 fish_add_path '/mnt/c/Program Files/npiperelay'
 
@@ -20,5 +21,6 @@ if test $ALREADY_RUNNING -ne 0
     # set socat to listen on $SSH_AUTH_SOCK and forward to npiperelay which then forwards to openssh-ssh-agent on windows
     setsid socat UNIX-LISTEN:$SSH_AUTH_SOCK,fork EXEC:"npiperelay.exe -ei -s //./pipe/openssh-ssh-agent",nofork &>/dev/null &
 end
+{{     end}}
 {{   end }}
 {{ end }}
