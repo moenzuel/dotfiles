@@ -2,14 +2,14 @@
 
 # Install asdf
 install_asdf() {
-  if [ ! -d "$HOME/.asdf" ]; then
-    git clone https://github.com/asdf-vm/asdf.git "$HOME/.asdf" --branch v0.14.0
+  if [ ! -d "{{ .chezmoi.homeDir }}/.asdf" ]; then
+    git clone https://github.com/asdf-vm/asdf.git "{{ .chezmoi.homeDir }}/.asdf" --branch v0.14.0
   fi
 }
 
 # Install asdf plugins
 install_asdf_plugins() {
-  . "$HOME/.asdf/asdf.sh"
+  . "{{ .chezmoi.homeDir }}/.asdf/asdf.sh"
   
   # Install direnv
   asdf plugin add direnv
