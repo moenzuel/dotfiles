@@ -3,7 +3,8 @@
     "editor.fontSize": 14,
     "files.associations": {
         "*.fish.tmpl": "shellscript",
-        "*.sh.tmpl": "shellscript"
+        "*.sh.tmpl": "shellscript",
+        "*.yaml.tmpl": "yaml"
     },
 }
   
