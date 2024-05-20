@@ -6,9 +6,3 @@ Template dotfiles repository, managed with [chezmoi](https://chezmoi.io/).
 ```sh
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply moenzuel
 ```
-
-## License
-
-MIT
-
-
