@@ -5,8 +5,11 @@ cd ~
 sudo apt install curl git gpg jq
 
 #install fish
-#install mise
 
+#install mise
+curl https://mise.run | sh
+
+#install chezmoi
 sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply moenzuel
 ```
 
