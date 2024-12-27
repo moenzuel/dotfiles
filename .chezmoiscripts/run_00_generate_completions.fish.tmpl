@@ -10,4 +10,8 @@ if status is-interactive
     if type -q docker
         {{ lookPath "docker" }} completion fish > ~/.config/fish/completions/docker.fish
     end
+
+    if type -q op
+        {{ lookPath "op" }} completion fish > ~/.config/fish/completions/op.fish
+    end
 end
