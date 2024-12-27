@@ -5,5 +5,5 @@ if status is-interactive
         {{ lookPath "mise" }} completion fish > ~/.config/fish/completions/mise.fish
     end
 
-    chezmoi completion fish --output=~/.config/fish/completions/chezmoi.fish
+    {{ lookPath "chezmoi" }} completion fish --output=~/.config/fish/completions/chezmoi.fish
 end
