@@ -1,0 +1,12 @@
+#!{{ lookPath "fish" }}
+#MISE description="Install or update the monaspace nerd fonts"
+
+curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Monaspace.zip
+
+{{ if eq .chezmoi.os "linux" }}
+
+{{ else if eq .chezmoi.os "windows" }}
+
+{{ end }}
+
+rm Monaspace.zip
