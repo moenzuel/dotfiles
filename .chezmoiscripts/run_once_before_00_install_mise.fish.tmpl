@@ -1,0 +1,10 @@
+#!{{ lookPath "fish" }}
+
+{{ if eq .chezmoi.os "linux" }}
+curl https://mise.run | sh
+{{ else if eq .chezmoi.os "darwin" }}
+# https://github.com/jdx/mise-action/issues/155
+curl https://mise.run | MISE_INSTALL_EXT=tar.gz sh
+{{ end }}
+
+$HOME/.local/bin/mise activate fish | source
