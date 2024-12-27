@@ -14,8 +14,6 @@ end
 
 {{ if eq .chezmoi.os "linux" }}
 {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
-[core]
 	alias op op.exe
 {{   end }}
 {{ end }}
-v
