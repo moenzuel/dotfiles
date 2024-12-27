@@ -1,10 +1,12 @@
+fish_add_path $HOME/.local/bin
+
 if status is-interactive
     if type -q mise
         {{ lookPath "mise" }} activate fish | source
-    end
 
-    if type -q starship
-        {{ lookPath "starship" }} init fish | source
+        if type -q starship
+            {{ lookPath "mise" }} exec starship -- starship init fish | source
+        end
     end
 end
 
@@ -14,6 +16,6 @@ end
 
 {{ if eq .chezmoi.os "linux" }}
 {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
-	alias op op.exe
+alias op op.exe
 {{   end }}
 {{ end }}

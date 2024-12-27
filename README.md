@@ -2,7 +2,7 @@
 
 ```sh
 cd ~
-sudo apt get install curl git gpg
+sudo apt install curl git gpg jq
 
 #install fish
 #install mise
