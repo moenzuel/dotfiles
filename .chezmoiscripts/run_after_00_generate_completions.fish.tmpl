@@ -4,4 +4,6 @@ if status is-interactive
     if type -q mise
         {{ lookPath "mise" }} completion fish > ~/.config/fish/completions/mise.fish
     end
+
+    chezmoi completion fish --output=~/.config/fish/completions/chezmoi.fish
 end
