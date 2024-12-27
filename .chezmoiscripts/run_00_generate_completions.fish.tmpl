@@ -6,4 +6,8 @@ if status is-interactive
     end
 
     {{ lookPath "chezmoi" }} completion fish --output=~/.config/fish/completions/chezmoi.fish
+
+    if type -q docker
+        {{ lookPath "docker" }} completion fish > ~/.config/fish/completions/docker.fish
+    end
 end
