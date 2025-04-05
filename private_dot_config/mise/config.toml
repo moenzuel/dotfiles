@@ -1,3 +1,11 @@
 [tools]
+"aqua:BurntSushi/ripgrep" = "latest"
+"aqua:Wilfred/difftastic" = "latest"
+"aqua:ajeetdsouza/zoxide" = "latest"
+"aqua:jesseduffield/lazygit" = "latest"
+"aqua:junegunn/fzf" = "latest"
+"aqua:lsd-rs/lsd" = "latest"
+"aqua:neovim/neovim" = "latest"
+"aqua:sharkdp/fd" = "latest"
 "aqua:starship/starship" = "latest"
 usage = "latest"
