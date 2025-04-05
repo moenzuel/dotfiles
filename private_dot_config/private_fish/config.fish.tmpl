@@ -7,15 +7,17 @@ if status is-interactive
         if type -q starship
             mise exec starship -- starship init fish | source
         end
+
+        if type -q fzf
+            mise exec fzf -- fzf --fish | source
+        end
+
+        if type -q zoxide
+            mise exec zoxide -- zoxide init fish | source
+        end
     end
 end
 
 if type -q chezmoi
-    alias cm {{ lookPath "chezmoi" }}
+    alias --save cm {{ lookPath "chezmoi" }}
 end
-
-{{ if eq .chezmoi.os "linux" }}
-{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
-alias op op.exe
-{{   end }}
-{{ end }}

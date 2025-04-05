@@ -1,28 +1,18 @@
 #!{{ lookPath "fish" }}
-#MISE description="Install or update the monaspace nerd fonts"
+#MISE description="Install or update the monaspace fonts"
 
-curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Monaspace.zip
+git clone https://github.com/githubnext/monaspace.git ~/monaspace
 
 {{ if eq .chezmoi.os "linux" }}
-set FONTS_DIR "$HOME/.local/share/fonts"
 
-mkdir -p font_temp
-unzip Monaspace.zip -d font_temp
-cp font_temp/*.otf $FONTS_DIR
-rm -rf font_temp
+bash util/install_macos.sh
 
 {{ else if eq .chezmoi.os "windows" }}
 
 {{ else if eq .chezmoi.os "darwin" }}
-set FONTS_DIR "$HOME/Library/Fonts"
 
-mkdir -p font_temp
-unzip Monaspace.zip -d font_temp
-cp font_temp/*.otf $FONTS_DIR
-rm -rf font_temp
+bash util/install_linux.sh
 
 {{ end }}
 
-rm Monaspace.zip
-
-# curl -fsSL https://raw.githubusercontent.com/getnf/getnf/main/getnf | bash
+rm -rf ~/monaspace
