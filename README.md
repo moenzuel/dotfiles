@@ -2,7 +2,7 @@
 
 ```sh
 cd ~
-sudo apt install curl git gpg jq build-essential
+sudo apt install curl git gpg jq build-essential bison
 
 #install fish
 

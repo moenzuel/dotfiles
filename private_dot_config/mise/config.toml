@@ -8,4 +8,5 @@
 "aqua:neovim/neovim" = "latest"
 "aqua:sharkdp/fd" = "latest"
 "aqua:starship/starship" = "latest"
+tmux = "latest"
 usage = "latest"
