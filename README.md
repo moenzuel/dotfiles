@@ -2,7 +2,7 @@
 
 ```sh
 cd ~
-sudo apt install curl git gpg jq
+sudo apt install curl git gpg jq build-essential
 
 #install fish
 
