@@ -1,3 +1,2 @@
 [edit]
-    command = "code"
-    args = ["--new-window", "--wait"]
+    command = "nvim"
