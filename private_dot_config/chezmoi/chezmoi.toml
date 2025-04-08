@@ -1,2 +1,6 @@
+[diff]
+    command = "difft"
+
 [edit]
     command = "nvim"
+
