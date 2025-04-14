@@ -1,18 +1,31 @@
 #!{{ lookPath "fish" }}
 #MISE description="Install or update the monaspace fonts"
 
-git clone https://github.com/githubnext/monaspace.git ~/monaspace
+set -l temp_dir ~/monaspace
 
-{{ if eq .chezmoi.os "linux" }}
-
-bash util/install_macos.sh
-
-{{ else if eq .chezmoi.os "windows" }}
-
-{{ else if eq .chezmoi.os "darwin" }}
-
-bash util/install_linux.sh
-
-{{ end }}
-
-rm -rf ~/monaspace
+# Clone repository
+echo "Cloning Monaspace repository..."
+if git clone --depth 1 https://github.com/githubnext/monaspace.git $temp_dir
+    # Platform-specific installation
+    {{ if eq .chezmoi.os "linux" }}
+    echo "Installing for Linux..."
+    bash $temp_dir/util/install_linux.sh
+    {{ else if eq .chezmoi.os "darwin" }}
+    echo "Installing for macOS..."
+    bash $temp_dir/util/install_macos.sh
+    {{ else if eq .chezmoi.os "windows" }}
+    echo "Windows installation not implemented"
+    exit 1
+    {{ else }}
+    echo "Unsupported OS: {{ .chezmoi.os }}"
+    exit 1
+    {{ end }}
+    
+    # Clean up
+    echo "Cleaning up..."
+    rm -rf $temp_dir
+    echo "Monaspace fonts installed successfully!"
+else
+    echo "Failed to clone Monaspace repository"
+    exit 1
+end

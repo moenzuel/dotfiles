@@ -1,5 +1,14 @@
 #!{{ lookPath "fish" }}
 
 if type -q mise
+    echo "Installing tools with mise..."
     {{ lookPath "mise" }} install
+    # Verify installation success
+    if test $status -eq 0
+        echo "Mise tools installed successfully."
+    else
+        echo "Warning: Some mise tools may have failed to install."
+    end
+else
+    echo "Error: mise not found. Tool installation skipped."
 end
