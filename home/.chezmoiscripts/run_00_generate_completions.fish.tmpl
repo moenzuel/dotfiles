@@ -2,20 +2,16 @@
 
 if status is-interactive
     if type -q mise
-        {{ lookPath "mise" }} completion fish > ~/.config/fish/completions/mise.fish
+        {{ lookPath "mise" }} completion fish > {{ .chezmoi.homeDir }}/.config/fish/completions/mise.fish
     end
 
-    {{ lookPath "chezmoi" }} completion fish --output=~/.config/fish/completions/chezmoi.fish
+    {{ lookPath "chezmoi" }} completion fish --output={{ .chezmoi.homeDir }}/.config/fish/completions/chezmoi.fish
 
     if type -q docker
-        {{ lookPath "docker" }} completion fish > ~/.config/fish/completions/docker.fish
+        {{ lookPath "docker" }} completion fish > {{ .chezmoi.homeDir }}/.config/fish/completions/docker.fish
     end
 
     if type -q op
-        {{ lookPath "op" }} completion fish > ~/.config/fish/completions/op.fish
-    end
-
-    if type -q rg
-        {{ lookPath "rg" }} --generate complete-fish > ~/.config/fish/completions/rg.fish
+        {{ lookPath "op" }} completion fish > {{ .chezmoi.homeDir }}/.config/fish/completions/op.fish
     end
 end

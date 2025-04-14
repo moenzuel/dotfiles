@@ -1,15 +1,29 @@
+[env]
+LOCAL_FISH_COMPLETION_DIR = "{{config_root}}/.config/fish/completions"
+
+[hooks]
+postinstall = 'mkdir -p "$LOCAL_FISH_COMPLETION_DIR"'
+
+[tasks.install-local-completions]
+description = 'Install shell completions into project directory'
+hide = true
+run = '''
+    {{arg(name="command")}} {{arg(name="completion_command", var=true)}} > "$LOCAL_FISH_COMPLETION_DIR/{{arg(name="command")}}.fish"
+'''
+
 [tools]
-"aqua:BurntSushi/ripgrep" = "latest"
+"aqua:BurntSushi/ripgrep" = { version = "latest", postinstall = 'mise run install-local-completions rg --generate complete-fish' }
 "aqua:Wilfred/difftastic" = "latest"
 "aqua:ajeetdsouza/zoxide" = "latest"
 "aqua:jesseduffield/lazygit" = "latest"
-"aqua:junegunn/fzf" = "latest"
+"aqua:junegunn/fzf" = "latest" # fish has built in completions
 "aqua:lsd-rs/lsd" = "latest"
 "aqua:neovim/neovim" = "latest"
-"aqua:sharkdp/fd" = "latest"
-"aqua:starship/starship" = "latest"
-go = "latest"
-node = "latest"
-npm = "latest"
-tmux = "latest"
+"aqua:sharkdp/fd" = { version = "latest", postinstall = 'mise run install-local-completions fd --gen-completions fish' }
+"aqua:starship/starship" = { version = "latest", postinstall = 'mise run install-local-completions starship completions fish' }
+go = "latest" # fish has built in completions
+node = "latest" # fish has built in completions
+npm = "latest" # fish has built in completions
+tmux = "latest" # fish has built in completions
 usage = "latest"
+
