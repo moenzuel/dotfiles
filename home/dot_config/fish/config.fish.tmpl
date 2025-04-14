@@ -1,5 +1,7 @@
 fish_add_path $HOME/.local/bin
 
+set fish_greeting ""
+
 if status is-interactive
     if type -q mise
         mise activate fish | source
