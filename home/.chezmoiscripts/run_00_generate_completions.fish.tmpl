@@ -1,7 +1,7 @@
 #!{{ lookPath "fish" }}
 
 if status is-interactive
-    if type -q mise
+    if type -q mise; and type -q useage
         {{ lookPath "mise" }} completion fish > {{ .chezmoi.homeDir }}/.config/fish/completions/mise.fish
     end
 
