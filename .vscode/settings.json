@@ -1,5 +1,9 @@
 {
     "debug.javascript.defaultRuntimeExecutable": {
         "pwa-node": "/home/bryan/.local/share/mise/shims/node"
+    },
+    "files.associations": {
+        "*.fish.tmpl": "fish",
+        "*.toml.tmpl": "toml"
     }
 }
