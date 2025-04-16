@@ -26,4 +26,3 @@ node = "latest" # fish has built in completions
 npm = "latest" # fish has built in completions
 tmux = "latest" # fish has built in completions
 usage = "latest"
-
