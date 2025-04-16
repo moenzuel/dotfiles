@@ -14,7 +14,7 @@ run = '''
 [tools]
 "aqua:BurntSushi/ripgrep" = { version = "latest", postinstall = 'mise run install-local-completions rg --generate complete-fish' }
 "aqua:Wilfred/difftastic" = "latest"
-"aqua:ajeetdsouza/zoxide" = "latest"
+"aqua:ajeetdsouza/zoxide" = "latest" # setup adds completions
 "aqua:jesseduffield/lazygit" = "latest"
 "aqua:junegunn/fzf" = "latest" # fish has built in completions
 "aqua:lsd-rs/lsd" = "latest"

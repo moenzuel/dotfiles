@@ -1,4 +1,4 @@
-## Setup
+# Setup
 
 ```sh
 cd ~
@@ -10,15 +10,18 @@ sudo apt install curl git gpg jq build-essential bison liblua5.1-0-dev
 sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply moenzuel
 ```
 
+## fish
 
-# fish
+```sh
 echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/4/Debian_12/ /' | sudo tee /etc/apt/sources.list.d/shells:fish:release:4.list
 curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:4/Debian_12/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/shells_fish_release_4.gpg > /dev/null
 sudo apt update
 sudo apt install fish
+```
 
+## docker
 
-# docker
+```sh
 sudo apt-get update
 sudo apt-get install ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
@@ -37,3 +40,4 @@ echo \
 
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
