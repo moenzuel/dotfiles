@@ -24,5 +24,7 @@ run = '''
 go = "latest" # fish has built in completions
 node = "latest" # fish has built in completions
 npm = "latest" # fish has built in completions
+"npm:@anthropic-ai/claude-code" = "latest"
+"npm:@openai/codex" = "latest"
 tmux = "latest" # fish has built in completions
 usage = "latest"
