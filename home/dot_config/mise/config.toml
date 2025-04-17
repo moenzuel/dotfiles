@@ -27,4 +27,4 @@ npm = "latest" # fish has built in completions
 "npm:@anthropic-ai/claude-code" = "latest"
 "npm:@openai/codex" = "latest"
 tmux = "latest" # fish has built in completions
-usage = "latest"
+usage = "latest" # required for mise completions
