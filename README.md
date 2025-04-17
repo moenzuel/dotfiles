@@ -4,13 +4,23 @@
 cd ~
 sudo apt install curl git gpg jq build-essential bison liblua5.1-0-dev
 
-#install fish
+#install fish shell
 
 #install chezmoi
 sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply moenzuel
 ```
 
-## fish
+## fish shell
+
+### debian
+
+```sh
+sudo add-apt-repository ppa:fish-shell/release-4
+sudo apt update
+sudo apt install fish
+```
+
+### ubuntu
 
 ```sh
 echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/4/Debian_12/ /' | sudo tee /etc/apt/sources.list.d/shells:fish:release:4.list
