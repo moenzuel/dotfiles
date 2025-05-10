@@ -14,19 +14,19 @@ run = '''
 [tools]
 "aqua:BurntSushi/ripgrep" = { version = "latest", postinstall = 'mise run install-local-completions rg --generate complete-fish' }
 "aqua:Wilfred/difftastic" = "latest"
-"aqua:ajeetdsouza/zoxide" = "latest" # setup adds completions
+"aqua:ajeetdsouza/zoxide" = "latest"                                                                                               # setup adds completions
 "aqua:idursun/jjui" = "latest"
 "aqua:jesseduffield/lazygit" = "latest"
 "aqua:jj-vcs/jj" = "latest"
-"aqua:junegunn/fzf" = "latest" # fish has built in completions
+"aqua:junegunn/fzf" = "latest"                                                                                                     # fish has built in completions
 "aqua:lsd-rs/lsd" = "latest"
 "aqua:neovim/neovim" = "latest"
 "aqua:sharkdp/fd" = { version = "latest", postinstall = 'mise run install-local-completions fd --gen-completions fish' }
 "aqua:starship/starship" = { version = "latest", postinstall = 'mise run install-local-completions starship completions fish' }
-go = "latest" # fish has built in completions
-node = "latest" # fish has built in completions
-npm = "latest" # fish has built in completions
+go = "latest"                                                                                                                      # fish has built in completions
+node = "18"                                                                                                                        # fish has built in completions
+npm = "latest"                                                                                                                     # fish has built in completions
 "npm:@anthropic-ai/claude-code" = "latest"
 "npm:@openai/codex" = "latest"
-tmux = "latest" # fish has built in completions
-usage = "latest" # required for mise completions
+tmux = "latest"                                                                                                                    # fish has built in completions
+usage = "latest"                                                                                                                   # required for mise completions
