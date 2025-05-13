@@ -4,6 +4,9 @@
 cd ~
 sudo apt install curl git gpg jq build-essential bison liblua5.1-0-dev
 
+# for erlang/elixir
+sudo apt install clang-format clang-tidy clang-tools clang clangd libc++-dev libc++1 libc++abi-dev libc++abi1 libclang-dev libclang1 liblldb-dev libllvm-ocaml-dev libomp-dev libomp5 lld lldb llvm-dev llvm-runtime llvm python3-clang automake autoconf libncurses5-dev libssl-dev
+
 #install fish shell
 
 #install chezmoi
@@ -30,6 +33,12 @@ sudo apt install fish
 ```
 
 ## docker
+
+### osx
+
+[orbstack](https://docs.orbstack.dev/quick-start)
+
+### linux
 
 ```sh
 sudo apt-get update
