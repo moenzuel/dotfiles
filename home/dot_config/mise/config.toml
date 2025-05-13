@@ -29,4 +29,5 @@ npm = "latest"                                                                  
 "npm:@anthropic-ai/claude-code" = "latest"
 "npm:@openai/codex" = "latest"
 tmux = "latest"                                                                                                                    # fish has built in completions
+"ubi:cli/cli" = { version = "latest", exe = "gh", postinstall = 'mise run install-local-completions gh completion -s fish' }
 usage = "latest"                                                                                                                   # required for mise completions
