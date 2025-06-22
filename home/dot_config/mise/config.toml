@@ -12,9 +12,9 @@ run = '''
 '''
 
 [tools]
-# node = "18"                                                                                                                        # fish has built in completions
+node = "18"                                                                                                                        # fish has built in completions
 # npm = "latest"                                                                                                                     # fish has built in completions
-# "npm:@anthropic-ai/claude-code" = "latest"
+"npm:@anthropic-ai/claude-code" = "latest"
 # "npm:@openai/codex" = "latest"
 # "ubi:cli/cli" = { version = "latest", exe = "gh", postinstall = 'mise run install-local-completions gh completion -s fish' }
 # usage = "latest"                                                                                                                   # required for mise completions
