@@ -1,0 +1,8 @@
+if type -q mise
+    if status is-interactive
+        {{ lookPath "mise" }} activate fish | source
+    else
+        {{ lookPath "mise" }} activate fish --shims | source
+    end
+end
+
