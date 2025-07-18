@@ -4,6 +4,31 @@ return {
     build = ':TSUpdate',
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
+    init = function()
+      -- Add filetype detection before the plugin loads
+      vim.filetype.add {
+        pattern = { ['.*/hypr/.*%.conf'] = 'hyprlang' },
+        -- Dynamic chezmoi template detection
+        ['.*%.tmpl'] = function(path, bufnr)
+          -- Extract the base filename before .tmpl
+          local base = path:match '(.*)%.tmpl$'
+          if not base then
+            return 'gotmpl'
+          end
+
+          -- Use vim's built-in filetype detection on the base filename
+          local detected_ft = vim.filetype.match { filename = base }
+
+          -- If vim can detect the filetype, use it
+          if detected_ft and detected_ft ~= '' then
+            return detected_ft
+          end
+
+          -- Fallback to gotmpl for template syntax
+          return 'gotmpl'
+        end,
+      }
+    end,
     opts = {
       ensure_installed = {
         'bash',
@@ -16,6 +41,7 @@ return {
         'fish',
         'git_config',
         'html',
+        'hyprlang',
         'javascript',
         'json',
         'jsonc',
